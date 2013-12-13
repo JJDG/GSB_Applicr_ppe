@@ -8,7 +8,7 @@ class MY_Controller extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
-		$this->load->model('connexion_model');
+		//$this->load->model('connexion_model');
 		$this->load->library('session');
 
 		// TRUE permet de passer les variables au filtre XSS
@@ -23,13 +23,13 @@ class MY_Controller extends CI_Controller{
 			else{
 				//Mauvais identifiant et pas de session déjà enregistrée, on redirige vers la page de connexion (par le controleur Connexion_c)
 				if(!$this->session->userdata('visiteur')){
-					redirect("connexion_c/connexion");
+					redirect("connexion_c/index");
 				}
 			}
 		}
 		else{
 			if(!$this->session->userdata('visiteur')){
-				redirect("connexion_c/connexion");
+				redirect("connexion_c/index");
 			}
 		}
 	}
