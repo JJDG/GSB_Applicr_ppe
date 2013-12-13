@@ -2,6 +2,7 @@
 echo"<h3>Connexion</h3>";
 echo'<div>';
 $this->load->helper('form');
+echo validation_errors();
 echo form_open("connexion_c/valider");
 ?>
 <p>Login :</p>
