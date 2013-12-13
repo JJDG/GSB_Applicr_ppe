@@ -18,11 +18,14 @@ class Connexion_c extends CI_Controller{
 	}
 	
 	public function valider(){
-		$this->form_validation->set_rules('identifiant', 'Nom', 'required');
+		$this->load->model('bdd_connexion');
+		$this->form_validation->set_rules('login', 'Nom', 'required');
 		$this->form_validation->set_rules('password', 'Mot de passe', 'required');
 		
 		if ($this->form_validation->run() == TRUE){
-			
+			$login = $this->input->post('login');
+			$mdp = $this->input->post('mdp');
+			$this->bdd_connexion->sessionVisiteur();
 		}
 		
 		else{
