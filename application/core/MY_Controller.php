@@ -12,7 +12,6 @@ class MY_Controller extends CI_Controller{
 		$this->load->library('session');
 
 		// TRUE permet de passer les variables au filtre XSS
-		// (cross-site scripting : injection de contenu dans une page web)
 		if ($this->input->post('identifiant', TRUE) && $this->input->post('password', TRUE)){
 				
 			$id = $this->input->post('identifiant');
