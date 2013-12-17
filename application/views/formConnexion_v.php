@@ -8,8 +8,8 @@ echo form_open("connexion_c/valider");
 <p>Login :</p>
 <?php echo form_input("login");?>
 <p>Mot de passe :</p>
-<?php echo form_password("password");
-	echo form_submit("login", "Connexion");
+<?php echo form_password("mdp");
+	echo form_submit("connect", "Connexion");
 	echo form_close('</div>');
 ?>
 
