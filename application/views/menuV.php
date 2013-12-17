@@ -9,7 +9,7 @@
       </div>
       <?php 
 	  echo "Connecté en tant que :";
-	  $this->session->userdata('nom')." ".$this->session->userdata('prenom');
+	  $this->session->userdata('nom')." ".$this->session->userdata('prenom')." ".$this->session->userdata('id');
 	  anchor('connexion_c', 'Déconnexion');
       $list = array(
       		anchor('rapport_visite_c', 'Nouveaux'),

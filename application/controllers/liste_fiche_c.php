@@ -6,9 +6,11 @@ class Liste_fiche_c extends MY_ADMIN_Controller{
 	
 	//affiche une liste de fiche du visiteur concerné a la date précisé
 	public function liste(){
+		$this->load->model('bdd_get');
 		$data['content'] = 'listeFiches_v';
 		$data['menu'] ='menuV';
-		$data['listeFiches'] = $this->bdd_get->getListeRapport();
+		$id  = $this->session->userdata('id');
+		$data['listeFiches'] = $this->bdd_get->getListeRapport($id);
 		$this->generer_affichage($data);
 		
 	}
