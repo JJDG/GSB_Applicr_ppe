@@ -8,11 +8,13 @@ class MY_ADMIN_controller extends MY_controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
+		$this->load->helper('html');
 		//$this->load->model('bdd_connexion');
 		$this->load->library('session');
 
-		if($this->session->userdata('id')){
-
+		if($this->session->userdata('id') != null){
+			echo'Vous etes connecté';
+			echo ' ida : '.$this->session->userdata('id').' nom : '.$this->session->userdata('nom');
 		}
 		
 		else{

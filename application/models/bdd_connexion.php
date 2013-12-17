@@ -41,6 +41,7 @@ class Bdd_connexion extends CI_Model{
 	}
 	
 	public function connecter($id,$nom,$prenom){
+		$this->load->helper('url');
 		$newdata = array(
 	                   'id'  => $id,
 	                   'nom'     => $nom,
@@ -49,6 +50,18 @@ class Bdd_connexion extends CI_Model{
 	               );
 		$this->session->set_userdata($newdata);
 		echo'Vous etes connecté';
+		echo ' id : '.$this->session->userdata('id').' nom : '.$this->session->userdata('nom');
 		redirect('liste_fiche_c/liste');
+	}
+	
+	public function deconnecter(){
+		$newdata = array(
+				'id'  => "",
+				'nom'     => "",
+				'prenom'     => "");
+			
+		$this->session->unset_userdata($newdata);
+		$this->session->sess_destroy();
+		redirect('c_connexion', 'refresh');
 	}
 }

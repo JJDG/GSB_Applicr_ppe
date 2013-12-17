@@ -14,7 +14,8 @@ class Connexion_c extends CI_Controller{
 	}
 	
 	public function deconnexion(){
-		
+		$this->load->model('bdd_connexion');
+		$this->bdd_connexion->deconnecter();
 	}
 	
 	public function valider(){
