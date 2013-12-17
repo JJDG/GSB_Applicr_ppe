@@ -14,7 +14,7 @@ class Bdd_get extends CI_Model{
 	function getVisiteur(){
 		$query = $this->db->get_where($this->table, array('vis_matricule' => $id));
 		echo $query->row();
-		return $query->row();
+		return $query;
 	}
 	
 }
