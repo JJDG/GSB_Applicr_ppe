@@ -1,4 +1,4 @@
-<?php $this->load->view('entete');
+<?php $this->load->view('enteteV');
 if($menu != null){
 	$this->load->view($menu);
 }
@@ -10,5 +10,5 @@ $this->load->view($content);
 
 echo'</div>';
 }
-$this->load->view('pied');
+$this->load->view('piedV');
 ?>

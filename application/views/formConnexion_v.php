@@ -10,5 +10,6 @@ echo form_open("connexion_c/valider");
 <p>Mot de passe :</p>
 <?php echo form_password("password");
 	echo form_submit("login", "Connexion");
-	echo form_close('');
+	echo form_close('</div>');
 ?>
+
