@@ -11,8 +11,16 @@ class MY_ADMIN_controller extends MY_controller{
 		//$this->load->model('bdd_connexion');
 		$this->load->library('session');
 
+		if($this->session->userdata('id')){
+
+		}
+		
+		else{
+				redirect("connexion_c/index");
+		}
+				
 		// TRUE permet de passer les variables au filtre XSS
-		if ($this->input->post('login', TRUE) && $this->input->post('mdp', TRUE)){
+		/*if ($this->input->post('login', TRUE) && $this->input->post('mdp', TRUE)){
 				
 			$id = $this->input->post('login');
 			$pass = $this->input->post('mdp');
@@ -31,6 +39,7 @@ class MY_ADMIN_controller extends MY_controller{
 			if(!$this->session->userdata('visiteur')){
 				redirect("connexion_c/index");
 			}
-		}
+		}*/
+		
 	}
 }
