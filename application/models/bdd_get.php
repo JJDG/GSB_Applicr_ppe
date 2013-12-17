@@ -17,4 +17,8 @@ class Bdd_get extends CI_Model{
 		return $query;
 	}
 	
+	
+	function getListeRapport(){
+		
+	}
 }
