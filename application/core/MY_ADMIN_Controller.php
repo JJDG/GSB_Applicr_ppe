@@ -3,7 +3,7 @@ if (!defined('BASEPATH')){
 	exit('No direct script access allowed');
 }
 
-class MY_Controller extends T_Controller{ 
+class MY_ADMIN_controller extends MY_controller{ 
 
 	function __construct(){
 		parent::__construct();
