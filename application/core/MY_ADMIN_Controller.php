@@ -8,14 +8,14 @@ class MY_ADMIN_controller extends MY_controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->helper('url');
-		//$this->load->model('connexion_model');
+		//$this->load->model('bdd_connexion');
 		$this->load->library('session');
 
 		// TRUE permet de passer les variables au filtre XSS
-		if ($this->input->post('identifiant', TRUE) && $this->input->post('password', TRUE)){
+		if ($this->input->post('login', TRUE) && $this->input->post('mdp', TRUE)){
 				
-			$id = $this->input->post('identifiant');
-			$pass = $this->input->post('password');
+			$id = $this->input->post('login');
+			$pass = $this->input->post('mdp');
 			if($this->user_model->validate($id, $pass)){
 				//Tout est ok, on enregistre l'identifiant dans les variable de session et on poursuit
 				$this->session->set_userdata('visiteur', $id);
