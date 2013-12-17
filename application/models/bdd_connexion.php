@@ -8,7 +8,7 @@ class Bdd_connexion extends CI_Model{
 	public function sessionVisiteur($login, $mdp){
 		//echo'<br/>ici';
 		$mdpV = $this->dateFormatMdp($mdp);
-		//echo $mdpV;
+		//echo '<br/>fin :'.$mdpV;
 		$req ="SELECT * FROM visiteur WHERE vis_nom ='".$login."' AND vis_dateembauche ='".$mdpV."'";
 		//echo $req;
 		$query = $this->db->query($req);
@@ -32,10 +32,11 @@ class Bdd_connexion extends CI_Model{
 		$an = $mdp[7].$mdp[8].$mdp[9].$mdp[10];
 		$moisFin = 0;
 		$moisR="";
-		//echo 'jour : '.$jour.' moi :'.$mois.' an : '.$an;
+		//echo '<br/>jour : '.$jour.' mois :'.$mois.' an : '.$an;
 		$lesMois = array('jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aog', 'sep', 'oct', 'nov', 'dec');
-		for($i = 0; $i < 12; $i++){if($mois == $lesMois[$i]){$moisFin = $i+1;}}
+		for($i = 0; $i < 12; $i++){if($mois == $lesMois[$i]){$moisFin = $i+1;} /*echo'mois actu'.$lesMois[$i];*/}
 		if($moisFin < 10){$moisR = "0".$moisFin;}
+		else{$moisR = $moisFin;}
 		return $an."-".$moisR."-".$jour;
 	}
 	
@@ -48,5 +49,6 @@ class Bdd_connexion extends CI_Model{
 	               );
 		$this->session->set_userdata($newdata);
 		echo'Vous etes connecté';
+		redirect('liste_fiche_c/liste');
 	}
 }
