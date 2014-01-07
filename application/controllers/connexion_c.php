@@ -10,6 +10,7 @@ class Connexion_c extends CI_Controller{
 	}
 	
 	public function index(){
+		//echo ' ida : '.$this->session->userdata('id').' nom : '.$this->session->userdata('nom');
 		$this->load->view('formConnexion_v');
 	}
 	

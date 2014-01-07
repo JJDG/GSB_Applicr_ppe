@@ -55,6 +55,7 @@ class Bdd_connexion extends CI_Model{
 	}
 	
 	public function deconnecter(){
+		$this->load->helper('url');
 		$newdata = array(
 				'id'  => "",
 				'nom'     => "",
@@ -62,6 +63,7 @@ class Bdd_connexion extends CI_Model{
 			
 		$this->session->unset_userdata($newdata);
 		$this->session->sess_destroy();
-		redirect('c_connexion', 'refresh');
+		echo'Vous avez été deconnecter';
+		redirect('connexion_c', 'refresh');
 	}
 }
