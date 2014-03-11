@@ -37,7 +37,7 @@ class Bdd_connexion extends CI_Model{
 		for($i = 0; $i < 12; $i++){if($mois == $lesMois[$i]){$moisFin = $i+1;} /*echo'mois actu'.$lesMois[$i];*/}
 		if($moisFin < 10){$moisR = "0".$moisFin;}
 		else{$moisR = $moisFin;}
-		return $an."-".$moisR."-".$jour;
+		return $an."-".$moisR."-".$jour; 
 	}
 	
 	public function connecter($id,$nom,$prenom){
