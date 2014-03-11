@@ -9,7 +9,7 @@ class Connexion_c extends CI_Controller{
 		$this->load->library('form_validation');
 	}
 	
-	public function index(){
+	public function index(){// pour tester connexion login : Villechalane, mdp : 11-dec-1992
 		//echo ' ida : '.$this->session->userdata('id').' nom : '.$this->session->userdata('nom');
 		$this->load->view('formConnexion_v');
 	}
